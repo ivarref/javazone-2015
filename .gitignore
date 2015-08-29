@@ -1,2 +1,5 @@
 target/
 *.swp
+**/.idea/*
+**/frozen.pom.xml
+**/*.iml
