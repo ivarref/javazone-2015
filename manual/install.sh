@@ -2,5 +2,7 @@
 
 set -x
 
-mvn clean install -Dsha1="$(git describe --long)" -Drevision="$(git show -s --format=%ct)"
+mvn versions:set -DnewVersion="$(git describe --long)"
+mvn clean install 
+mvn versions:revert
 
