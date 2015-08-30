@@ -6,22 +6,28 @@
 
     <groupId>no.ivarref</groupId>
     <artifactId>programmatically-set-versions-parent</artifactId>
-    <version>1.0.${revision}-${sha1}</version>
+    <version>0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <revision>0</revision>
-        <sha1>development</sha1>
     </properties>
 
     <modules>
         <module>one</module>
+        <module>two</module>
     </modules>
- 
-    <dependencies>
-    </dependencies>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>no.ivarref</groupId>
+                <artifactId>one</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
     <build>
         <plugins>
             <plugin>
