@@ -49,6 +49,8 @@ public class VersionsGitDescribe implements EventSpy {
                 doRelease = "true".equals(execRequest.getUserProperties().getProperty("release", "false"));
                 if (doRelease) {
                     setReleaseVersions(execRequest);
+                } else {
+                    logger.info("VersionsGitDescribe :: Keeping versions ...");
                 }
             } else if (event instanceof MavenExecutionResult && doRelease) {
                 revertVersions();
