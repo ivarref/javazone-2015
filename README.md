@@ -6,7 +6,7 @@ Maven 3.3.1
 
 ## Usage
 
-Run `./demo.sh` and you should see the following output:
+Run `./demo.sh` and you should see an output like the following:
 
     App is located in my-app-v2-1-g016ee92.jar
     Lib is located in lib-a-v2-1-g016ee92.jar
