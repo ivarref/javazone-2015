@@ -1,6 +1,4 @@
 #!/bin/bash
 
-rm -rf $HOME/.m2/repository/no/ivarref/*
-
-mvn clean install
+mvn clean package -Drelease && ./app/my-app/target/appassembler/bin/app
 
