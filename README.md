@@ -10,3 +10,6 @@ Re-runs (once the extension is installed in the local repo) can be done like thi
     cd multi-project
     mvn clean package -Drelease && ./app/my-app/target/appassembler/bin/app
 
+Comments to refsdal.ivar@gmail.com
+
+
