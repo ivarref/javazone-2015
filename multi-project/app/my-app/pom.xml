@@ -41,7 +41,7 @@
                         <configuration>
                             <programs>
                                 <program>
-                                    <mainClass>great.app.AppB</mainClass>
+                                    <mainClass>great.app.App</mainClass>
                                     <id>app</id>
                                 </program>
                             </programs>
