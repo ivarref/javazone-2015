@@ -1,4 +1,4 @@
-# javazone-2015
+# Javazone 2015
 
 ## Requirements
 
