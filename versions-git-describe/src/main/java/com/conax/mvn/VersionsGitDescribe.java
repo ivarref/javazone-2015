@@ -46,7 +46,12 @@ public class VersionsGitDescribe implements EventSpy {
         try {
             if (event instanceof MavenExecutionRequest) {
                 MavenExecutionRequest execRequest = (MavenExecutionRequest) event;
-                doRelease = "true".equals(execRequest.getUserProperties().getProperty("release", "false"));
+                doRelease = "true".equals(execRequest.getUserProperties().getProperty("release", "true"));
+                for (String goal : execRequest.getGoals()) {
+                    if (goal.startsWith("versions:")) {
+                        doRelease = false;
+                    }
+                }
                 if (doRelease) {
                     setReleaseVersions(execRequest);
                 } else {
@@ -69,7 +74,6 @@ public class VersionsGitDescribe implements EventSpy {
         Properties pc = request.getProperties() != null ? request.getProperties() : new Properties();
         pc.put("newVersion", version);
         request.setProperties(pc);
-
         Invoker invoker = new DefaultInvoker();
         invoker.setOutputHandler(silentOutputHandler());
         invoker.execute(request);

@@ -1,4 +1,4 @@
 #!/bin/bash
 
-mvn clean package -Drelease && ./app/my-app/target/appassembler/bin/app
+mvn clean package && ./app/my-app/target/appassembler/bin/app
 
